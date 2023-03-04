@@ -1,86 +1,129 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import Navbar from "./components/navbar";
 
+function IconArrows_left(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="currentColor"
+      height="2em"
+      width="2em"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinejoin="bevel"
+        strokeMiterlimit={10}
+        strokeWidth={2}
+        d="M37 15L20 32l17 17"
+      />
+    </svg>
+  );
+}
+function IconArrows_right(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="currentColor"
+      height="2em"
+      width="2em"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinejoin="bevel"
+        strokeMiterlimit={10}
+        strokeWidth={2}
+        d="M27 15l17 17-17 17"
+      />
+    </svg>
+  );
+}
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div>
+        <Navbar />
+        <div className="bg-[#E2E5E8] h-[10px]"></div>
+        <div className="flex justify-end pb-2 mt-3 mr-2 border-b-2">
+          <p className="text-[#9b59b6] text-sm">
+            Перейти в режим редактирования
+          </p>
         </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
+        <div className="flex justify-between mt-2">
+          <IconArrows_left />
+          <p className="text-[15px] border-b-2 border-blue-500">Личные данные</p>
+          <p className="text-[15px]">Документы</p>
+          <IconArrows_right />
+        </div>
+        <p className="text-[21px] font-md ml-3 border-b-2 px-4">Персональные данные</p>
+        <div className="flex justify-center mt-3">
+        <Image src='/img.jpg' width={200} height={200} alt='' className="rounded-[0.5rem]" />
+        </div>
+        <div className="flex justify-between mt-2">
+          <IconArrows_left />
+          <p className="text-[15px] border-b-2 border-blue-500">Ф.И.О</p>
+          <p className="text-[15px]">Прежняя ФИО</p>
+          <IconArrows_right />
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Фамилия</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Мустах</p>
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Имя</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Куаныш</p>
+        </div><div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Отчество</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Уалиханович</p>
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Фамилия транскриптом</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Mustakh</p>
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Имя транскриптом</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Kuanysh</p>
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Отчество транскриптом</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Ualikhanuly</p>
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">ИИН</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">000612550918</p>
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Дата рождения</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">12.06.2000</p>
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Национальность</p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Казах</p>
+        </div>
+        <div className="mt-3 ml-6">
+          <p className="pb-[5px] text-[9px]">Пол </p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Мужской</p>
+        </div>
+        <div className="mt-3 mb-5 ml-6">
+          <p className="pb-[5px] text-[9px]">Гражданство </p>
+          <p className="border border-[#3498db] w-[290px] px-3 py-2 rounded-[3px] bg-[#eee]">Казахстан</p>
+        </div>
+      </div>
+      <footer>
+        <p className="text-[10px] text-center"> ©Platonus v5.3 (build# 478), 2006-2023 Platonus</p>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
